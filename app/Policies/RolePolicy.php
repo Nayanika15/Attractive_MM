@@ -9,7 +9,9 @@ use Illuminate\Auth\Access\Response;
 class RolePolicy
 {
     use HandlesAuthorization;
+    
     protected $unautorised_msg = 'You are not authorised for this action.';
+
     /**
      * Determine if the given post can be updated by the user.
      *
