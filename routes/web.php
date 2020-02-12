@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'setlocale', 'prefix' => '{locale}'], function()
+{
+	Route::get('', function () {
+	    return view('welcome');
+	})->name('homepage');
+
+	Auth::routes();
+
+	Route::get('home', 'HomeController@index')->name('home');
+	Route::get('editor', function(){
+		return view('editor');
+	})->name('editor');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

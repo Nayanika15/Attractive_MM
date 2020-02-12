@@ -67,13 +67,21 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    @if( count( config('app.available_locales') ) )
+                        @foreach( config('app.available_locales') as $locale)
+                            <a class="navbar-brand" href="{{ route(Route::currentRouteName(), $locale) }}">
+                                    {{ $locale }}
+                                </a>
+                            </li>
+                        @endforeach
+                    @endif
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('home', app()->getLocale()) }}">{{ __('home.home') }}</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login', app()->getLocale()) }}">{{ __('home.login') }}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register', app()->getLocale()) }}">{{ __('home.register') }} </a>
                         @endif
                     @endauth
                 </div>

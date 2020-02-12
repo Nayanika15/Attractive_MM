@@ -22,6 +22,8 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     public const HOME = '/home';
+    //modified to set locale in the route
+    //public const HOME = app()->getLocale().'/home';
 
     /**
      * Define your route model bindings, pattern filters, etc.

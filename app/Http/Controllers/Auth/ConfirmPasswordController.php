@@ -37,4 +37,12 @@ class ConfirmPasswordController extends Controller
     {
         $this->middleware('auth');
     }
+
+    /**
+     * To redirect to homepage along with the locale parameter;
+     */
+    public function redirectTo()
+    {
+        return app()->getLocale() . '/home';
+    }
 }

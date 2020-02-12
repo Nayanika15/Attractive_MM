@@ -39,4 +39,12 @@ class VerificationController extends Controller
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
     }
+
+    /**
+     * To redirect to homepage along with the locale parameter;
+     */
+    public function redirectTo()
+    {
+        return app()->getLocale() . '/home';
+    }
 }

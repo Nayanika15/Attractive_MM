@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['middleware' => 'json.response'], function()
+Route::group(['middleware' => ['json.response', 'setlocale'], 'prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'] ], function()
 {
 	Route::post('/register', 'Api\UserController@register');
 	Route::post('/login', 'Api\UserController@login');

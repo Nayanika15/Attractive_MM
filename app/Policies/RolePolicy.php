@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\Response;
 class RolePolicy
 {
     use HandlesAuthorization;
-    
+
     protected $unautorised_msg = 'You are not authorised for this action.';
 
     /**
@@ -26,7 +26,7 @@ class RolePolicy
     }
 
     /**
-     * Determine if the given post can be updated by the user.
+     * Determine if the given post can be created by the user.
      *
      * @param  \App\User  $user
      * @return bool
@@ -39,7 +39,7 @@ class RolePolicy
     }
 
     /**
-     * Determine if the given post can be updated by the user.
+     * Determine if the given post can be deleted by the user.
      *
      * @param  \App\User  $user
      * @return bool

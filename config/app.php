@@ -107,6 +107,21 @@ return [
     */
 
     'faker_locale' => 'en_US',
+   
+    /**
+     |------------------------------------------------------------------------
+     | To define the available language for locale 
+     |------------------------------------------------------------------------
+     |
+     | This array define the configured languages available for localization.
+     |
+     |
+     */
+
+     'available_locales' => [
+        'en',
+        'my'
+     ],
 
     /*
     |--------------------------------------------------------------------------
